@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\SantaController::class, 'index'])->name('santa.index');
+Route::post('/generate', [\App\Http\Controllers\SantaController::class, 'generatePairs'])->name('santa.generate.pairs');
